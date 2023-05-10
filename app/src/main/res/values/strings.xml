@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Story App</string>
+
+    <string name="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+
+    <string name="upload">Upload</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+
+    <string name="error_password_must_8">Password must be 8 character</string>
+    <string name="error_password_blank">Please insert your password</string>
+    <string name="error_email_invalid">Your email is invalid</string>
+    <string name="error_email_blank">Please insert your email</string>
+    <string name="error_name_empty">Please insert your email</string>
+    <string name="error_description_empty">Please insert your description</string>
+    <string name="error_photo_empty">Please insert your photo</string>
+    <string name="password_hint">Password</string>
+    <string name="email_hint">Email</string>
+    <string name="name_hint">Name</string>
+    <string name="logout">Logout</string>
+
+    <string name="upload_story">Upload Story</string>
+    <string name="detail_story">Story Detail</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+
+    <string name="login_success">Login Success</string>
+    <string name="register_success">Register Success</string>
+    <string name="login_failed">Login Failed Please Check Your Email and Password</string>
+    <string name="register_failed">Register Please Fill the Form Correctly</string>
+    <string name="maps">Maps</string>
+</resources>
