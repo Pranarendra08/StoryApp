@@ -35,10 +35,6 @@ class ViewModelFactory private constructor( //
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
             return LoginViewModel(mApplication) as T
-//        } else if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
-//            return MainViewModel(mApplication) as T
-//            @Suppress("UNCHECKED_CAST")
-//            return MainViewModel(Injection.provideRepository(context)) as T
         } else if (modelClass.isAssignableFrom(RegisterViewModel::class.java)) {
             return RegisterViewModel(mApplication) as T
         } else if (modelClass.isAssignableFrom(DetailViewModel::class.java)) {

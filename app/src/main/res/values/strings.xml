@@ -30,4 +30,5 @@
     <string name="login_failed">Login Failed Please Check Your Email and Password</string>
     <string name="register_failed">Register Please Fill the Form Correctly</string>
     <string name="maps">Maps</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

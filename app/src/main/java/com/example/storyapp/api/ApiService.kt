@@ -27,7 +27,7 @@ interface ApiService {
         @Header("Authorization") authorization: String,
         @Query("page") page: Int,
         @Query("size") size: Int
-    ): ResponseListStory // List<ResponseListStory> //Call<ResponseListStory>
+    ): ResponseListStory
 
     @GET("stories/{id}")
     fun getDetailStory(
@@ -48,11 +48,4 @@ interface ApiService {
         @Header("Authorization") authorization: String,
         @Query("location") location: Double
     ): Call<ResponseListStory>
-
-//    @GET("stories")
-//    suspend fun getStoriesWithPagination(
-//        @Query("page") page: Int? = null,
-//        @Query("size") size: Int? = null,
-//        @Query("location") location: Int = 0,
-//    ): ResponseListStory
 }

@@ -16,7 +16,6 @@ data class ResponseListStory(
 	val message: String
 )
 
-//@Entity(tableName = "story")
 data class ListStoryItem(
 
 	@field:SerializedName("photoUrl")

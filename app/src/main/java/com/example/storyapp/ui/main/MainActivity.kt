@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.storyapp.R
 import com.example.storyapp.api.response.ListStoryItem
@@ -25,13 +23,9 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-//    private val loginViewModel by viewModels<LoginViewModel> {
-//        ViewModelFactory.getInstance(application)
-//    }
-//
-//    private val mainViewModel by viewModels<MainViewModel> {
-//        ViewModelFactory.getInstance(application)
-//    }
+    private val loginViewModel by viewModels<LoginViewModel> {
+        ViewModelFactory.getInstance(application)
+    }
 
     private val mainViewModel: MainViewModel by viewModels {
         MainViewModel.MainViewModelFactory(this)
@@ -49,13 +43,6 @@ class MainActivity : AppCompatActivity() {
             finishAffinity()
         }
 
-//        mainViewModel.getStory()
-
-//        mainViewModel.listStory.observe(this) {
-//            setListStory(it)
-//            getData()
-//        }
-
         getData()
 
         binding.fabAddStory.setOnClickListener {
@@ -71,22 +58,14 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.story.observe(this) {
             adapter.submitData(lifecycle, it)
         }
-    }
 
-//    private fun setListStory(listStoryItems: PagingData<ListStoryItem>?) {
-//        if (listStoryItems != null) {
-//            binding.rvListStory.layoutManager = LinearLayoutManager(this)
-//            val adapter = StoryAdapter()//listStoryItems
-//            binding.rvListStory.adapter = adapter
-//
-//            adapter.setOnItemClickCallback(object : StoryAdapter.OnItemClickCallback {
-//                override fun onItemCLicked(data: ListStoryItem) {
-//                    startActivity(Intent(this@MainActivity, DetailActivity::class.java)
-//                        .putExtra("story_id", data.id))
-//                }
-//            })
-//        }
-//    }
+        adapter.setOnItemClickCallback(object : StoryAdapter.OnItemClickCallback {
+                override fun onItemCLicked(data: ListStoryItem) {
+                    startActivity(Intent(this@MainActivity, DetailActivity::class.java)
+                        .putExtra("story_id", data.id))
+                }
+            })
+    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
@@ -97,12 +76,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-//            R.id.logout -> {
-//                loginViewModel.logout()
-//                startActivity(Intent(this, LoginActivity::class.java))
-//                finishAffinity()
-//                true
-//            }
+            R.id.logout -> {
+                loginViewModel.logout()
+                startActivity(Intent(this, LoginActivity::class.java))
+                finishAffinity()
+                true
+            }
             R.id.maps -> {
                 startActivity(Intent(this, MapsActivity::class.java))
                 return true
